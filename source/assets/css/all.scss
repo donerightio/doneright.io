@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+@import "settings";
+@import "imports";
+
+body {
+  background: $backgroundColor;
+  color: $textColor;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $headingFont;
+  font-weight: 600;
+  line-height: 1.45em;
+  text-shadow: 1px 2px 0px darken($textColor, 40%);
+}
+
+h1 { font-size: golden-ratio($baseFontSize, 4); }
+h2 { font-size: golden-ratio($baseFontSize, 3); }
+h3 { font-size: golden-ratio($baseFontSize, 2); }
+h4 { font-size: golden-ratio($baseFontSize, 1); }
+h5 { font-size: golden-ratio($baseFontSize, 0); }
+
+.container {
+  @include outer-container();
+}
+
+.hero {
+  text-align: center;
+  margin: 3em 0;
+}
+
+nav {
+  @include row();
+  text-align: center;
+  ul {
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    margin: 0 1em;
+    text-transform: uppercase;
+  }
+}
+section {
+  @include row();
+}
+
+footer {
+  @include row();
+}
