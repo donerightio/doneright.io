@@ -13,28 +13,45 @@ body {
   color: $textColor;
   font-size: 14px;
   font-weight: 300;
+  font-family: $bodyFont;
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: $headingFont;
+  font-family: $bodyFont;
   font-weight: 600;
   line-height: 1.45em;
-  text-shadow: 1px 2px 0px darken($textColor, 40%);
+  letter-spacing: .4rem;
 }
 
-h1 { font-size: golden-ratio($baseFontSize, 4); }
-h2 { font-size: golden-ratio($baseFontSize, 3); }
-h3 { font-size: golden-ratio($baseFontSize, 2); }
+h1 { font-size: golden-ratio($baseFontSize, 3); }
+h2 { font-size: golden-ratio($baseFontSize, 2); }
+h3 { font-size: golden-ratio($baseFontSize, 1); }
 h4 { font-size: golden-ratio($baseFontSize, 1); }
 h5 { font-size: golden-ratio($baseFontSize, 0); }
 
-.container {
-  @include outer-container();
+p {
+  font-family: $bodyFont;
+  font-size: 1.6rem;
+  line-height: 1.6;
 }
 
-.hero {
-  text-align: center;
-  margin: 3em 0;
+.container {
+  // @include outer-container();
+}
+
+.splash {
+  // background: url("../img/unsplash-kitsune-3.jpg") center center fixed;
+  // background-size: cover;
+  h1 {
+    text-transform: uppercase;
+    letter-spacing: 1.2rem;
+  }
+}
+
+img.logo {
+  width: 200px;
+  display: block;
+  margin: 0 auto;
 }
 
 nav {
@@ -49,10 +66,30 @@ nav {
     text-transform: uppercase;
   }
 }
-section {
-  @include row();
+section{
+  min-height: 100vh;
+  &.one { background-color: $brand; 
+    h2 { color: $tertiary; }
+    p { color: #fff; }
+  }
+  &.two { background-color: $tertiary; 
+    h2 { color: $brand; }
+    p { color: #FFF; }
+  }
+  &.three { background-color: $accentOne; 
+    h2 { color: #FFF; }
+  }
+  
+  h2 { color: $headingColor; }
+
+
+  > section{ 
+    @include outer-container(); 
+    padding: 15vh 20px;     
+  }
 }
 
 footer {
   @include row();
+  p { font-family: $headingFont; font-size: 1rem; text-align: center; }
 }

@@ -1,10 +1,16 @@
-$blue: #27586B;
-$yellow: #AA8939;
-$red: #AA4D39;
+$brand: #0ABCFF; //bright blue
+$primary: #595959; //grey
+$secondary: #FCFCFC; //light grey
+$tertiary: #373737; //dark grey
+$accentOne: #FFB028; //orange
+$accentTwo: #5A7C87; //dark blue
+$accentThree: #08C265; //green
 
-$backgroundColor: $blue;
-$textColor: #eee;
 
-$headingFont: 'Montserrat', sans-serif;
-$bodyFont: 'Oxygen', sans-serif;
+$backgroundColor: $secondary;
+$textColor: $primary;
+$headingColor: $brand;
+
+$headingFont: 'Whitney SSm A', 'Whitney SSm B', 'Signika Negative', 'Montserrat', 'Helvetica Neue', helvetica, arial, sans-serif;
+$bodyFont: 'Whitney SSm A', 'Whitney SSm B', 'Helvetica Neue', helvetica, arial, sans-serif;
 $baseFontSize: 14px;
