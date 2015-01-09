@@ -40,7 +40,7 @@ activate :livereload
 
 # Site Settings
 @analytics_account = false
-@typekit_account = false
+@typekit_account = "ggq0whd"
 
 # Asset Settings
 set :css_dir, 'assets/css'

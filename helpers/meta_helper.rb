@@ -1,5 +1,5 @@
 def page_title
-  title = "Middleman" #Set site title here
+  title = "Web Development Done Right"
 
   if data.page.title
     title << " | " + data.page.title

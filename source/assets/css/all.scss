@@ -66,26 +66,66 @@ nav {
     text-transform: uppercase;
   }
 }
-section{
+
+section {
   min-height: 100vh;
-  &.one { background-color: $brand; 
+
+  &.brand { background-color: $brand;
     h2 { color: $tertiary; }
     p { color: #fff; }
   }
-  &.two { background-color: $tertiary; 
+
+  &.secondary { background-color: $secondary;
+    h2 { color: $secondaryAccent; }
+    p { color: #FFF; }
+  }
+
+  &.tertiary { background-color: $tertiary;
     h2 { color: $brand; }
     p { color: #FFF; }
   }
-  &.three { background-color: $accentOne; 
+
+  &.primaryAccent { background-color: $primaryAccent;
     h2 { color: #FFF; }
   }
-  
+
   h2 { color: $headingColor; }
 
+  > .container {
+    @include outer-container();
+    padding: 15vh 20px;
+  }
+}
 
-  > section{ 
-    @include outer-container(); 
-    padding: 15vh 20px;     
+form {
+  * + * {
+    margin-bottom: .4em;
+  }
+  input, textarea {
+    background-color: $brand;
+    border-width: 0;
+    box-sizing: border-box;
+    color: #FFF;
+    line-height: 1.2em;
+    overflow: auto;
+    padding: .4em;
+    width: 100%;
+
+    &:focus {
+      outline: 0;
+      background-color: lighten($brand, 8%);
+    }
+    @include placeholder {
+      color: #FFF;
+    }
+  }
+
+  input[type=submit] {
+    background-color: $primaryAccent;
+    padding: 1em;
+    &:hover {
+      background-color: darken($primaryAccent, 8%);
+    }
   }
 }
 
