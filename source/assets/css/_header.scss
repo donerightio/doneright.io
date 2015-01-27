@@ -1,0 +1,23 @@
+header {
+	background: transparent;
+	position: absolute;
+	width: 100%;
+
+	nav {
+		margin: 0 auto;
+
+		ul {}
+
+		a {
+			color: #FFF;
+			text-decoration: none;
+			line-height: 1;
+			padding: 1.2rem;
+			border-radius: 0 0 3px 3px;
+
+			&:hover {
+				color: $brand;
+			}
+		}
+	}
+}

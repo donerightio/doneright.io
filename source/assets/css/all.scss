@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 @import "settings";
+@import "header";
 
 @import "normalize-scss/normalize";
 @import "bourbon";
@@ -17,7 +18,8 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: $bodyFont;
+  font-family: $headingFont;
+  text-transform: uppercase;
   font-weight: 600;
   line-height: 1.45em;
   letter-spacing: .4rem;
@@ -36,23 +38,74 @@ p {
 }
 
 .container {
+  background-color: $brand;
   // @include outer-container();
 }
 
 .splash {
-  // background: url("../img/unsplash-kitsune-3.jpg") center center fixed;
-  // background-size: cover;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background: url("../img/doneright-logo.png") no-repeat center center scroll;
+  background-size: 30%;
+  -webkit-animation: pulse 1.4s infinite; /* Chrome, Safari, Opera */
+    animation: pulse 1.4s infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes pulse {
+  0% {opacity: .1; background-size: 50%; }
+  20% {opacity: .15; background-size: 51%; }
+  30% {opacity: .1; background-size: 50%; }
+  40% {opacity: .125; background-size: 50.5%; }
+  100% {opacity: .1; background-size: 50%; }
+}
+
+/* Standard syntax */
+@keyframes pulse {
+  0% {opacity: .1; background-size: 30%; }
+  20% {opacity: .15; background-size: 31%; }
+  30% {opacity: .1; background-size: 30%; }
+  40% {opacity: .125; background-size: 30.5%; }
+  100% {opacity: .1; background-size: 30%; }
+}
+
+.splashText {
+  position: relative;
+  top: 0;
+  z-index: 2;
+  text-align: center;
+  color: #FFF;
+
   h1 {
     text-transform: uppercase;
     letter-spacing: 1.2rem;
+    margin-top: 35vh;
+    // font-size: 5vw;
+
+    span { letter-spacing: 0; }
+  }
+
+  h2 {
+    color: #FFF;
+    text-transform: none;
+    letter-spacing: 0;
   }
 }
 
-img.logo {
-  width: 200px;
-  display: block;
-  margin: 0 auto;
-}
+// img.logo {
+//   position: absolute;
+//   left: 35%;
+//   right: 50%;
+//   z-index: 0;
+//   width: 50vh;
+//   top: 5vh;
+//   vertical-align: middle;
+//   display: inline-block;
+//   margin: 0 auto;
+//   padding-right: .2em;
+// }
 
 nav {
   @include row();
@@ -76,6 +129,8 @@ section {
   }
 
   &.secondary { background-color: $secondary;
+    background: url("../img/image-1.png") center center scroll;
+    background-size: cover;
     h2 { color: $secondaryAccent; }
     p { color: #FFF; }
   }
@@ -93,7 +148,7 @@ section {
 
   > .container {
     @include outer-container();
-    padding: 15vh 20px;
+    padding: 2vh;
   }
 }
 
@@ -131,5 +186,15 @@ form {
 
 footer {
   @include row();
-  p { font-family: $headingFont; font-size: 1rem; text-align: center; }
+  background-color: $backgroundColor;
+  position: relative;
+  z-index: 10;
+  height: 20vh;
+  
+  p {
+    font-family: $headingFont;
+    font-size: 1rem;
+    text-align: center;
+    padding-top: 5vh;
+  }
 }

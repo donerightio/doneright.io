@@ -21,7 +21,7 @@ html.no-js
 
     = javascript_include_tag "vendor/modernizr"
 
-    = partial "partials/typekit"
+    / = partial "partials/typekit"
     = partial "partials/analytics"
 
     = yield_content :head
@@ -31,7 +31,7 @@ html.no-js
       = partial "partials/compatibility-notice"
 
     .container
-      = partial "partials/header"
+      / = partial "partials/header"
       == yield
       = partial "partials/footer"
 
