@@ -5,6 +5,8 @@ require "middleman/rack"
 require "rack/contrib/try_static"
 require "uglifier"
 
+`bower install`
+
 # Build the static site when the app boots
 `bundle exec middleman build`
 
