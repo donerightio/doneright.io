@@ -1,4 +1,4 @@
-# DoneRight.io Homepage
+# DoneRight.io Homepage ![Build Status](https://img.shields.io/codeship/c5e79d60-8e02-0132-a614-76956cc2de79.svg?style=flat-square)
 
 Middleman + Bower = Joy
 

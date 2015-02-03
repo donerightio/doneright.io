@@ -5,8 +5,6 @@ require "middleman/rack"
 require "rack/contrib/try_static"
 require "uglifier"
 
-`bower install`
-
 # Build the static site when the app boots
 `bundle exec middleman build`
 
@@ -14,9 +12,9 @@ require "uglifier"
 use Rack::Head
 # Attempt to serve static HTML files
 use Rack::TryStatic,
-    :root => "build",
-    :urls => %w[/],
-    :try => ['.html', 'index.html', '/index.html']
+    root: "build",
+    urls: %w[/],
+    try: %w(.html index.html /index.html)
 
 # Serve a 404 page if all else fails
 run lambda { |env|
