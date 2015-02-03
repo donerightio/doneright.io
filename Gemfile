@@ -14,3 +14,8 @@ gem "slim"
 
 gem "bourbon"
 gem "neat"
+
+# Heroku deployment
+gem 'rack-contrib'
+gem 'puma'
+gem 'uglifier'
