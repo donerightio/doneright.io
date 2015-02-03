@@ -8,15 +8,6 @@ set :markdown_engine, :redcarpet
 activate :livereload
 
 ###
-# Compass
-###
-
-# Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
-
-###
 # Page options, layouts, aliases and proxies
 ###
 
@@ -52,6 +43,9 @@ after_configuration do
   @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
   sprockets.append_path File.join "#{root}", @bower_config["directory"]
 end
+
+# Serve paths without the .html
+activate :directory_indexes
 
 # Build-specific configuration
 configure :build do
